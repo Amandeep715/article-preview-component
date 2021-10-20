@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--light-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.875rem;
+}
+.card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    max-width: 21.875rem;
+    height: 31.875rem;
+    border-radius: 0.9375rem;
+    position: relative;
+}
+.card-img {
+    border-radius: 0.9375rem 0.9375rem 0 0;
+    height: 12.5rem;
+}
+.card-content {
+    padding: 2.1875rem 1.5625rem 0.9375rem;
+}
+.article-title, .writer-name {
+    margin: 0;
+    color: var(--very-dark-grayish-blue);
+    font-weight: 700;
+    font-size: 1rem;
+}
+.article-content, .date {
+    color: var(--desaturated-dark-blue);
+}
+.article-content {
+    margin: 1.25rem 0 1.875rem;
+}
+.share-container {
+    background-color: var(--very-dark-grayish-blue);
+    display: flex;
+    align-items: center;
+    padding: 0 1.75rem;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 0.9375rem 0.9375rem;
+    transition: all 0.5s ease;
+}
+.share-container > p {
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    letter-spacing: 0.3125rem;
+    margin-right: 0.625rem;
+}
+.share-container > img {
+    margin: 0 0.625rem;
+}
+.close-share, .open-share {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-share {
+    background-color: var(--grayish-blue);
+    margin-left: 3.125rem;
+}
+.close-share > svg > path {
+    fill: #fff;
+}
+.share-container.open {
+    height: 4.0625rem;
+}
+.writer-info {
+    display: flex;
+    align-items: center;
+}
+.writer-img {
+    border-radius: 50%;
+    width: 2.5rem;
+}
+.writer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5.280rem 0 0.75rem;
+}
+.writer-name {
+    font-size: 0.875rem;
+}
+.open-share {
+    background-color: var(--light-grayish-blue);
+}
+.attribution { font-size: 0.75rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (min-width: 50rem) {
+    .card {
+        flex-direction: row;
+        max-width: 46.875rem;
+        height: 17.5rem;
+    }
+    .card-img {
+        height: auto;
+        width: 18.75rem;
+        border-radius: 0.9375rem 0 0 0.9375rem;
+    }
+    .card-content {
+        padding: 1.875rem;
+    }
+    .article-title {
+        width: 21.875rem;
+        font-size: 1.125rem;
+    }
+    .share-container {
+        width: 15.625rem;
+        height: 0;
+        border-radius: 0.625rem;
+        left: 75%;
+        bottom: 30%;
+    }
+    .share-container.open {
+        height: 3.125rem;
+    }
+
+    .arrow-down {
+        display: none;
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid var(--very-dark-grayish-blue);
+        left: 91%;
+        bottom: 27%;
+      }
+    .share-container.open + div {
+        display: block;
+    }  
+    .close-share {
+        display: none;
+    }
+    .writer {
+        margin-right: 10.75rem;
+    }
+   .share-container.open ~ .writer-info > .open-share {
+        background-color: var(--desaturated-dark-blue);
+    }
+    .share-container.open ~ .writer-info > .open-share path {
+        fill: #fff;
+    }
+} 
